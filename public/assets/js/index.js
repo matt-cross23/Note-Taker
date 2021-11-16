@@ -1,3 +1,4 @@
+console.log("Im connected")
 let noteTitle;
 let noteText;
 let saveNoteBtn;
