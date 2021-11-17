@@ -1,7 +1,7 @@
 const app = require('express').Router();
 const { data } = require('browserslist');
 const { response } = require('express');
-// const { v4: uuidv4 } = require('uuid');
+const { v4: uuidv4 } = require('uuid');
 // const { data } = require('browserslist');
 const {readAndAppend, readFromFile} = require('../helpers/utils');
 
@@ -18,14 +18,14 @@ app.get('/notes', (req, res) => {
     
 app.post('/notes', (req, res) => {
   console.info(`${req.method} request received!`);
-  const {title, text,} = req.body;
+  const { title, text,} = req.body;
   if (title && text) { 
   const newNote ={
     title, 
     text,
-  }
+    note_id: uuidv4(),
+  };
 readAndAppend(newNote, './db/db.json');
-
 const response = {
   status: 'success',
   body: newNote,
@@ -36,7 +36,6 @@ res.json(response);
 res.json('Error in posting feedback');
   }
   
-
 });
     
   module.exports = app
