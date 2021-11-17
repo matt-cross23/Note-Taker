@@ -8,7 +8,7 @@ const {readAndAppend, readFromFile} = require('../helpers/utils');
 // Get request to read notes from file
 app.get('/notes', (req, res) => {
   readFromFile('db/db.json', "utf8").then(notes => {
-  
+  console.log(notes)
     res.json(JSON.parse(notes));
     
 
@@ -23,7 +23,7 @@ app.post('/notes', (req, res) => {
   const newNote ={
     title, 
     text,
-    note_id: uuidv4(),
+    id: uuidv4(),
   };
 readAndAppend(newNote, './db/db.json');
 const response = {
@@ -37,5 +37,12 @@ res.json('Error in posting feedback');
   }
   
 });
+// delete notes
+app.delete('/api/notes:id', (req,res)=>{
+  readFromFile('db/db.json', "utf8").then(notes =>{
+    res.json(JSON.parse(notes));
+  })
+})
+
     
   module.exports = app
