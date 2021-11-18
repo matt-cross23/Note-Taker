@@ -1,4 +1,4 @@
-<!-- 
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   # **Note-Taker**
 
@@ -35,4 +35,4 @@
   ## Questions
   This site was built by [matt-cross23] https://github.com/matt-cross23 
   Contact me at: matthewcross1017@gmail.com
-  :grinning: -->
+  :grinning:
