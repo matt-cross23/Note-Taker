@@ -1,5 +1,5 @@
 const app = require('express').Router();
-const { response } = require('express');
+const { res } = require('express');
 const { v4: uuidv4 } = require('uuid');
 const {readAndAppend, readFromFile} = require('../helpers/utils');
 
