@@ -1,7 +1,6 @@
 const app = require('express').Router();
 const { response } = require('express');
 const { v4: uuidv4 } = require('uuid');
-// const { data } = require('browserslist');
 const {readAndAppend, readFromFile} = require('../helpers/utils');
 
 // Get request to read notes from file
