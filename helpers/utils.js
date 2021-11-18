@@ -1,4 +1,4 @@
-const { data } = require('browserslist');
+
 const fs = require('fs');
 const util = require('util');
 
